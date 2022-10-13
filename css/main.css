@@ -1,3 +1,13 @@
+:root {
+    /* rootの中に置くことで全体に適用（navとかにしてしまうとその中でしか使えない）
+    valid --special-color --specialcolor --specialColor 
+    invaid --special color (スペースがダメ) この名前でカラーを呼び出せる*/
+    --special-color: tomato;
+    --second-color: #551CF1;
+    --light-color: white;
+    --dark-color: black;
+}
+
 /* . is for class selector */
 .container {
     max-width: 900px;
@@ -28,7 +38,7 @@ main > p{
 見出しに続く段落で何かを行うこと*/
 h2 + p{
     background-color: black;
-    color: white;
+    color: var(--second-color);
     padding: 1rem;
 }
 
@@ -56,7 +66,7 @@ nav a:visited {
    text-decoration: none;
    text-transform: uppercase;
    transition: transform .5s; 
-   /* ↑これをいつも付けたほうが良い */
+   /* ↑これをいつも付けたほうが良い,ボタンにさわったことがわかりやすいので */
 }
 
 nav a:hover,
@@ -64,7 +74,24 @@ nav a:focus{
     text-decoration: underline;
     transform: scale(1.4);
 }
-
 nav a:active{
     transform: scale(1.4) translateX(10px);
+}
+
+/* pseudo elements */
+a[href$=".pdf"]::after{
+    content:"\2913";
+    font-size: 1.25rem;
+    color: tomato;
+}
+
+h2+p::first-line{
+    color:tomato;
+}
+/* これらの機能はクラスとかdivを細かくつけたくないときに使える */
+h3+p::first-letter{
+    background-color: #551CF1;
+    color:white;
+    padding: .25rem;
+    margin-right: .10rem;
 }
