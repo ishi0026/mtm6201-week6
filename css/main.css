@@ -100,7 +100,8 @@ h3+p::first-letter{
 .google {
     display:block;
     background-color: lavender;
-    width: 100%;
+    width: calc(100% - 6rem -4px);
+    /* 幅いっぱい（100%）から、6rem, 4pxの固定幅を引いた数値を指定 */
     padding: 2rem;
     margin: 1rem;
     /* also there is a 4px border on the left */
