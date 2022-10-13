@@ -43,3 +43,28 @@ h2 + p{
 a[href="#"]{
   color: tomato;
 }
+/*参考 https://gray-code.com/html_css/hierarchy-of-css-selector/ */
+a[href^="http"] {
+    border-left: 4px solid #551CF1;
+}
+
+/* State related pseudo classes */
+nav a,
+nav a:link,
+nav a:visited {
+   display: inline-block;
+   text-decoration: none;
+   text-transform: uppercase;
+   transition: transform .5s; 
+   /* ↑これをいつも付けたほうが良い */
+}
+
+nav a:hover,
+nav a:focus{
+    text-decoration: underline;
+    transform: scale(1.4);
+}
+
+nav a:active{
+    transform: scale(1.4) translateX(10px);
+}
