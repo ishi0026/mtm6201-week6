@@ -38,7 +38,7 @@ main > p{
 見出しに続く段落で何かを行うこと*/
 h2 + p{
     background-color: black;
-    color: var(--second-color);
+    color: var(--light-color);
     padding: 1rem;
 }
 
@@ -94,4 +94,14 @@ h3+p::first-letter{
     color:white;
     padding: .25rem;
     margin-right: .10rem;
+}
+
+/* calc() function */
+.google {
+    display:block;
+    background-color: lavender;
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem;
+    /* also there is a 4px border on the left */
 }
